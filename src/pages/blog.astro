@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const posts = await Astro.glob('../posts/*.md');
+---
+
+<Layout title="Blog">
+  <section class="page-content">
+    <div class="container">
+      {posts.map(post => (
+        <Card>
+          <h3><a href={`/${post.frontmatter.slug}`}>{post.frontmatter.title}</a></h3>
+          <div>
+          <i>{post.frontmatter.author} </i> on {new Date(post.frontmatter.date).toLocaleDateString()}
+        </div>
+          <p>{post.frontmatter.excerpt}</p>  
+          <a class="btn" href={`/${post.frontmatter.slug}`}>Read More</a>
+        </Card>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  a:hover {
+    color: var(--color-secondary);
+  }
+  
+  h3 a:hover {
+    color: var(--color-secondary);
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import Card from './Card.astro'
+
+const educationData = [
+    {
+        major: 'M.S. in Electrical Engineering & Computer Science', 
+        uni: 'National Taipei University of Technology',
+        date: 'Sept 2014 to Jul 2016',
+        loc: 'Taiwan'
+    },
+    {
+        major: 'B.S. in Applied Science Information Technology', 
+        uni: 'Politeknik Negeri Lhokseumawe',
+        date: 'Sept 2009 to Aug 2013',
+        loc: 'Aceh'
+    },
+];
+---
+
+<section class="features">
+  <div class="container">
+   {educationData.map(ed => (
+      <Card>
+        <h3>{ed.uni}</h3>
+        <p>{ed.major}</p>
+        <p>{ed.loc} - {ed.date}</p>
+      </Card>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 500px) {
+  .features .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>

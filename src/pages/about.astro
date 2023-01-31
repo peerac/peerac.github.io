@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro'
+import Showcase from '../components/Showcase.astro';
+import Education from '../components/Education.astro';
+import Social from '../components/Social.astro';
+---
+
+<Layout title="About">
+    <Showcase heading={"Hi, my name is Muhammad Reza Zulman"} text={"Backend Engineer, Teacher at Politeknik Negeri Lhokseumawe & Data Enthusiast"} showExtra={false}/>
+    <section class="page-content">
+        <div class="container">
+            <Card dark={true}>
+            <h3>Summary</h3>
+                <p>
+                    A Software engineer specializing in developing distributed services using various technologies and programming languages. 
+                    Currently, focus on developing back-end services using Golang and Python while keeping up to date with new techniques and 
+                    technologies related to Golang and Python by teaching at a vocational university. 
+                    Also interested in data engineering and machine learning.
+                </p>
+            </Card>
+            
+            <br />
+            <Social />
+
+            <br />
+            <h3>Education</h3>
+            <Education />
+
+            <h3>Tech stack</h3>
+
+            <div id="wrapper--techstack__items">
+                <div class="card--techstack"><span>Golang - Python - C#</span></div>
+                <div class="card--techstack"><span>Gin - Flask - .NET</span></div>
+                <div class="card--techstack"><span>Postgres - MongoDB - Redis</span></div>
+                <div class="card--techstack"><span>Git - Gitlab Ci/CD - Docker - AWS</span></div>
+            </div>
+
+            <br />
+            <h3>Work History</h3>
+            <div class="card--work-history">
+                <strong><i>Teacher</i> - Politeknik Negeri Lhokseumawe</strong>
+                <p>Mar 2022 - Present</p>
+                <ul>
+                    <li>&rarr; Teach & mentoring student for Distributed System Development course.</li>
+                    <li>&rarr; Developing internal web-based application using Golang.</li>
+                </ul>
+            </div>
+            <div class="card--work-history">
+                <strong><i>Backend Developer</i> - Gramedia Asri Media (Kompas Gramedia Group)</strong>
+                <p>Apr 2021 - Jul 2022</p>
+                <ul>
+                    <li>&rarr; Re-write (revamp) all backend code-based to Golang.</li>
+                    <li>&rarr; Maintain & fix bug on existing code-base for Gramedia digital's backend written in python.</li>
+                    <li>&rarr; Develop new feature for existing python based scheduler application.</li>
+                </ul>
+            </div>
+            <div class="card--work-history">
+                <strong><i>Web Developer</i> - Infinite Solution</strong>
+                <p>Jan 2021 - Apr 2021</p>
+                <ul>
+                    <li>&rarr; Fixing bug and improve existing web-based applications.</li>
+                    <li>&rarr; Develop new feature and new requirement for client web-based application using .NET</li>
+                </ul>
+            </div>
+            <div class="card--work-history">
+                <strong><i>Software Engineer & Cloud Practitioner</i> - Esynergi Indonesia Exa</strong>
+                <p>Nov 2017 - Nov 2020</p>
+                <ul>
+                    <li>&rarr; Develop web-based & mobile applications using various technologies.</li>
+                    <li>&rarr; Administering server for application's deployment and code repository using AWS.</li>
+                    <li>&rarr; Design & maintain company cloud infrastructure for internal usage.</li>
+                </ul>
+            </div>
+    </div>
+</section>
+</Layout>
+
+<style>
+    .card--work-history {
+        border-left: 1px solid var(--color-secondary);
+        margin-bottom: 3em;
+        padding-left: 2em;
+    }
+
+    .card--techstack {
+        border: 1px solid var(--color-secondary);
+        border-radius: 5px;
+        padding: 0.5em 1em;
+        align-items: center;
+    }
+    #wrapper--techstack__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        font-size: 0.9em;
+    }
+</style>
